@@ -14,15 +14,6 @@ class Usuario {
 	public function setIdusuario($value) {
 		$this->idusuario = $value;
 	}
-
-	// public function getLogin() {
-	// 	return $this->deslogin;
-	// }
-
-	// public function setLogin($value) {
-	// 	$this->deslogin = $value;
-	// }
-
 	
 	public function getDeslogin() {
 		return $this->deslogin;
@@ -64,6 +55,13 @@ class Usuario {
 			$this->setDtcadastro(new DateTime($row['dtcadastro']));
 		}
 	}
+
+
+	public static function getList() {
+		$sql = new Sql();
+		return $sql->select("SELECT * FROM tb_usuarios ORDER BY deslogin;");
+	}
+
 
 	public function __toString() {
 		return json_encode(array(
