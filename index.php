@@ -10,15 +10,37 @@ require_once("config.php");
 
 
 
-//Carrega um usuario//
+//Carrega um usuario por ID//
 // $root = new Usuario();
 // $root->loadById(3);
 
 
 
 //Carrega uma lista de usuarios//
-$lista = Usuario::getList();
+//$lista = Usuario::getList();
 
-echo json_encode($lista);
+
+//Carrega lista de usuario buscando pelo login//
+//$search = Usuario::search("jhone");
+
+
+//Carega usuario usando login e senha//
+//$usuario = new Usuario();
+//$usuario->login("Jhone", "abcd123");
+//echo $usuario;
+
+
+
+$aluno = new Usuario();
+$aluno->setDeslogin("Aluno");
+$aluno->setDessenha("lin0");
+
+$aluno->insert();
+
+
+echo $aluno;
+
+//echo json_encode($search);
+
 
 ?>
