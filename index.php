@@ -31,12 +31,11 @@ require_once("config.php");
 
 
 
-$aluno = new Usuario();
-$aluno->setDeslogin("Aluno");
-$aluno->setDessenha("lin0");
-
+// $aluno = new Usuario();
+// $aluno->setDeslogin("Jhone");
+// $aluno->setDessenha("0101");
+$aluno = new Usuario("Aluno", "@lun0");
 $aluno->insert();
-
 
 echo $aluno;
 

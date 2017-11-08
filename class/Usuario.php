@@ -90,9 +90,15 @@ class Usuario {
 			':PASSWORD'=>$this->getDessenha()
 			));
 		if(count($results) > 0) {
-			$this->setData($results);
+			//$this->setData($results);
+			$this->setData($results[0]);
 		}
 	}
+
+public function __construct($login = "", $password = "") {
+	$this->setDeslogin($login);
+	$this->setDessenha($password);
+}
 
 	public function __toString() {
 		return json_encode(array(
